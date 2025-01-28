@@ -16,3 +16,6 @@ mv ./gymnasium/envs/classic_control/acrobot.py ./gymnasium/envs/classic_control/
 cat ./gymnasium/envs/classic_control/acrobot.orig | sed 's/np.float_/np.float64/g' > ./gymnasium/envs/classic_control/acrobot.py
 
 pip install -e ".[classic_control]"
+
+
+https://www.swisstransfer.com/d/7f7072ee-ba69-499d-90e7-4f1888e4437b
