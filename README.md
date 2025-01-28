@@ -11,9 +11,9 @@ tar -zxf v0.29.1.tar.gz
 
 cd Gymnasium-0.29.1/
 
-mv ./gymnasium/envs/classic_control/acrobot.py ./gymnasium/envs/classic_control/acrobot.orig
+find . | grep py$ | awk '{A=substr($0,1,length($0)-3); print "mv "$0" "A".orig; cat "$0" | sed '"'"'s/np.float_/np.float64/g'"'"' > "$0}' > patch.sh
 
-cat ./gymnasium/envs/classic_control/acrobot.orig | sed 's/np.float_/np.float64/g' > ./gymnasium/envs/classic_control/acrobot.py
+bash patch.sh
 
 pip install -e ".[classic_control]"
 
